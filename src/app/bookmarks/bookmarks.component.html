@@ -1,0 +1,8 @@
+<h1>Bookmark List</h1>
+<button (click)="clearBookmarks()">Clear Bookmark</button>
+<ul *ngFor="let bookmark of bookmarkList">
+    <li>
+        <a href={{bookmark.url}}>{{bookmark.name}}</a>
+        <button (click)="deleteBookmark(bookmark)">Delete</button>
+    </li>
+</ul>

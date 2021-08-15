@@ -1,0 +1,6 @@
+<h1>Useful Links for Angular</h1>
+<!--<ul *ngFor="let link of linkList">
+    <li><a href="{{link.url}}">{{link.name}}</a> <button (click)="addToBookmarks(link)">Add to Bookmark</button></li>
+</ul> -->
+
+<app-linked-item *ngFor="let link of linkList" [link]="link"></app-linked-item>

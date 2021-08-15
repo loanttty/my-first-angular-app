@@ -22,4 +22,8 @@ describe('PostsComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should populate the correct title', () => {
+    expect(component.title).toBe("Posts");
+  });
 });
