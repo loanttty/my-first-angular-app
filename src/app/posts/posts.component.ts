@@ -14,7 +14,13 @@ export class PostsComponent implements OnInit {
   constructor(private postService: PostsService) { }
 
   ngOnInit(): void {
-    this.posts = this.postService.getPost()
+    this.postService.getPost().subscribe( res => {
+      for (let index = 0; index < res.length; index++) {
+        const post = res[index]
+        post["vote"] = 1
+      }
+      this.posts = res
+    })
   }
 
   hidePost(post:Post):void {

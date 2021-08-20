@@ -1,26 +1,16 @@
 import { Injectable } from '@angular/core';
+import { Post } from '../models/Post';
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PostsService {
 
-  constructor() { }
+  constructor(private http:HttpClient) { }
 
-  getPost() {
-    return [
-      {
-        id: 1,
-        title: "Hello",
-        body: "How are you doing today?",
-        vote: 1,
-      },
-      {
-        id: 2,
-        title: "I'm good",
-        body: "Have just recovered from the flu",
-        vote: 1,
-      }
-    ]
+  getPost(): Observable<Post[]> {
+    return this.http.get<Post[]>("http://jsonplaceholder.typicode.com/posts?_limit=8")
   }
 }

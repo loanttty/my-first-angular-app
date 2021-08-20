@@ -12,6 +12,7 @@ import { DirectoryComponent } from './directory/directory.component';
 import { BookmarksComponent } from './bookmarks/bookmarks.component';
 import { LinkedItemComponent } from './linked-item/linked-item.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
