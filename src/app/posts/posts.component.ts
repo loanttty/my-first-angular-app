@@ -12,7 +12,7 @@ export class PostsComponent implements OnInit {
   posts: Post[] = []
 
   constructor(private postService: PostsService) { }
-
+  
   ngOnInit(): void {
     this.postService.getPost().subscribe( res => {
       for (let index = 0; index < res.length; index++) {
@@ -23,8 +23,15 @@ export class PostsComponent implements OnInit {
     })
   }
 
-  hidePost(post:Post):void {
+  hidePost(post: Post):void {
     this.posts = this.posts.filter(p => p.id !== post.id)
+  }
+
+  addPost(post: Post): void {
+    //this.posts.unshift(post) add post at the start of the array
+    this.posts.push(post)
+    console.log(this.posts)
+    alert("Post added!")
   }
 
 }

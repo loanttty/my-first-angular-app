@@ -13,4 +13,8 @@ export class PostsService {
   getPost(): Observable<Post[]> {
     return this.http.get<Post[]>("http://jsonplaceholder.typicode.com/posts?_limit=8")
   }
+
+  addPost(post: Post) {
+    return post
+  }
 }

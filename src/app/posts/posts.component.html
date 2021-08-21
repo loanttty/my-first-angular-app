@@ -9,3 +9,5 @@
 <div fxLayout="row-reverse" fxLayoutAlign="center">
     <app-post-item ngFlexOffset="15%" *ngFor="let post of posts" [post]="post" (hidePost)="hidePost($event)"></app-post-item>
 </div>
+
+<app-create-post (addPost)="addPost($event)"></app-create-post>

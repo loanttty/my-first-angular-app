@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,7 +13,8 @@ import { DirectoryComponent } from './directory/directory.component';
 import { BookmarksComponent } from './bookmarks/bookmarks.component';
 import { LinkedItemComponent } from './linked-item/linked-item.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { CreatePostComponent } from './create-post/create-post.component'
 
 @NgModule({
   declarations: [
@@ -23,14 +25,16 @@ import { HttpClientModule } from '@angular/common/http'
     NavBarComponent,
     DirectoryComponent,
     BookmarksComponent,
-    LinkedItemComponent
+    LinkedItemComponent,
+    CreatePostComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     FlexLayoutModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
