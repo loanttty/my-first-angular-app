@@ -24,8 +24,8 @@ export class CreatePostComponent implements OnInit {
       vote: 1
     }
 
-    this.addPost.emit(post)
     this.postsService.addPost(post)
+    alert("Post added!")
 
     this.title = ""
     this.body = ""

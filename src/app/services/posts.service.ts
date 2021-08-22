@@ -7,6 +7,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class PostsService {
+  newPosts: Post[] = []
 
   constructor(private http:HttpClient) { }
 
@@ -14,7 +15,11 @@ export class PostsService {
     return this.http.get<Post[]>("http://jsonplaceholder.typicode.com/posts?_limit=8")
   }
 
-  addPost(post: Post) {
-    return post
+  getNewPosts(): Post[] {
+    return this.newPosts
+  }
+
+  addPost(post: Post): void {
+    this.newPosts.push(post)
   }
 }

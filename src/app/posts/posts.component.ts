@@ -20,6 +20,7 @@ export class PostsComponent implements OnInit {
         post["vote"] = 1
       }
       this.posts = res
+      this.posts = this.posts.concat(this.postService.getNewPosts())
     })
   }
 
@@ -27,11 +28,10 @@ export class PostsComponent implements OnInit {
     this.posts = this.posts.filter(p => p.id !== post.id)
   }
 
-  addPost(post: Post): void {
-    //this.posts.unshift(post) add post at the start of the array
+  /*addPost(post: Post): void {
+    this.posts.unshift(post) add post at the start of the array
     this.posts.push(post)
     console.log(this.posts)
-    alert("Post added!")
-  }
+  }*/
 
 }
